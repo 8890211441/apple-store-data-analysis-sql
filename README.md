@@ -18,3 +18,5 @@ Key Concepts Used:
 - Revenue Calculation
 
 The goal of this project is to practice real-world SQL queries and generate business insights from Apple Store data.
+
+
