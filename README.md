@@ -66,4 +66,51 @@ Used LEFT JOIN and NULL filtering to find products that have never been sold.
 ### Business Insight
 Helps identify underperforming products and inventory issues.
 
+Average Price of Products Sold
 
+### Objective
+Find the average price of products that have been sold.
+
+### SQL Concepts Used
+- Subquery
+- AVG()
+- IN Operator
+
+### Query
+
+```sql
+SELECT AVG(price)
+FROM products
+WHERE product_id IN (
+    SELECT product_id
+    FROM sales
+);
+Business Insight
+
+Calculates the average selling price of products that generated actual sales.
+
+Query 2: Stores with Sales Above Average
+Objective
+
+Identify stores whose total sales are greater than the average sales across all stores.
+
+SQL Concepts Used
+GROUP BY
+COUNT()
+HAVING
+Subquery
+Query
+SELECT store_id, COUNT(*) AS total_sales
+FROM sales
+GROUP BY store_id
+HAVING COUNT(*) > (
+    SELECT AVG(total_sales)
+    FROM (
+        SELECT COUNT(*) AS total_sales
+        FROM sales
+        GROUP BY store_id
+    ) x
+);
+Business Insight
+
+Helps identify high-performing stores that generate above-average sales
