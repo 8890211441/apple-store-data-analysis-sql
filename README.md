@@ -19,7 +19,7 @@ Key Concepts Used:
 
 The goal of this project is to practice real-world SQL queries and generate business insights from Apple Store data.
 
-1️⃣ Warranty Claims with Product Names
+1️1. Warranty Claims with Product Names
 
 
 ## Warranty Claims with Product Names
@@ -35,7 +35,7 @@ Joined warranty, sales, and products tables to identify which products generated
 Helps identify products with higher warranty claim frequencies.
 
 
-2️⃣ Total Units Sold by Product Category
+2. Total Units Sold by Product Category
 
 
 ## Total Units Sold by Product Category
@@ -51,7 +51,7 @@ Calculated total units sold for each product category by joining sales and produ
 Identifies the highest-selling product categories.
 
 
-3️⃣ Unsold Products Analysis
+3. Unsold Products Analysis
 
 
 ## Unsold Products Analysis
@@ -114,3 +114,22 @@ HAVING COUNT(*) > (
 Business Insight
 
 Helps identify high-performing stores that generate above-average sales
+
+## Warranty Claims for Products Sold More Than Once
+
+This query identifies warranty claims associated with products that have been sold more than once. It uses a subquery to filter products based on sales frequency and joins the warranty and sales tables to retrieve related claim details.
+
+**SQL Concepts Used:**
+- Subquery
+- INNER JOIN
+- GROUP BY
+- HAVING
+Query 2
+## Total Units Sold for a Specific Product
+
+This query calculates the total units sold for a specific product using a subquery. The subquery retrieves the product ID, while the main query calculates the total quantity sold from the sales table.
+
+**SQL Concepts Used:**
+- Subquery
+- SUM()
+- Aggregate Functions
